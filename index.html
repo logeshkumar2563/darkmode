@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="profile-removebg-preview.png" alt="" width="70px" height="70px">
+            <h2>Logesh</h2>
+            <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Protofolto</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Hire me</a></li>
+        </ul>
+        <img src="dark theme icon/moon.png" alt="" id="icon">
+        </nav>
+        <div class="info">
+            <h1>I'm<span> logesh kumar</span></h1>
+            <p>To enhance my professional skills, capabilities and knowledge in an organization which <br> recognizes the value of hard work and trusts me with responsibilities and challenges..</p>
+            <a href="">download cv</a>
+        </div>
+        <div class="imgbox">
+            <!-- <img src="portfolio_site_img/pattern.png" alt="" class="sk"> -->
+            <img src="img.png" alt="" class="lk">
+        </div>
+        <div class="icons">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+    </div>
+ 
+   
+    </div>
+    <script>
+        var icon =document.getElementById("icon");
+
+        if (localStorage.getItem("theme") == null){
+            localStorage.setItem("theme","light");
+        }
+
+        let localdata = localStorage.getItem("theme");
+
+        if(localdata == "light"){
+            icon.src="dark theme icon/moon.png";
+            document.body.classList.remove("darkcolor");
+
+        }else if(localdata == "dark"){
+            icon.src="dark theme icon/moon.png";
+            document.body.classList.add("darkcolor");
+        }
+
+
+        icon.onclick= function(){
+            document.body.classList.toggle("darkcolor");
+            if(document.body.classList.contains("darkcolor")){
+                icon.src="dark theme icon/sun.png";
+                localStorage.setItem("theme","dark");
+            }else{
+                icon.src="dark theme icon/moon.png";
+                localStorage.setItem("theme","light");
+
+            }
+        }
+    </script>
+</body>
+</html>
